@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Ester | Portifólio</title>
+</head>
+
+<body>
+
+    <nav class="navegacao">
+        <ul class="menu">
+            <li>
+                <a href="#inicio" class="menu-link">Início</a>
+            </li>
+
+            <li>
+                <a href="#sobre" class="menu-link">Sobre</a>
+            </li>
+
+            <li>
+                <a href="#projetos" class="menu-link">Projetos</a>
+            </li>
+
+            <li>
+                <a href="#contatos" class="menu-link">Contatos</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <main id="inicio" class="cabecalho">
+
+        <img src="img/Foto - eu.jpeg " alt="Foto de Esterleane" class="foto-perfil">
+        <h1> Esterleane Ribeiro</h1>
+        <p class="cabecalho-sub-titulo"> Desenvolvedora em Construção </p>
+
+    </main>
+
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre Mim</h2>
+        <div class="sobre-caixa">
+            <p class="sobre paragrafo">
+                Olá, Sou uma estudande da Residência Serratec, buscando a cada dia mais conhecimento na área da
+                tecnologia. 
+                
+                 “Uma máquina consegue fazer o trabalho de 50 homens ordinários. Nenhuma máquina consegue fazer o trabalho de um homem extraordinário”. Elbert Hubbard 
+            </p>
+        </div>
+    </section>
+
+    <section id="Projetos" class="Projetos">
+        <h2 class="projetos-titulos">Meus Projetos</h2>
+        <div class="projetos-caixa">
+
+            <div class="projetos-Java">
+                <img src="img/Projeto 1 Java.jpg" alt="Projeto 1" class="projetos-imagem">
+                <div class="caixa-textos-projetos">
+                  <h3 class="Inf-projetos">Java</h3>
+                  <p class="paragrafo-projetos">Faça como um programador. Quando tudo está errado e confuso, apague tudo e recomece do zero. Orlando Cordeiro</p>
+            
+                </div>
+            </div>
+
+            <div class="projetos-Python">
+                <img src="img/Projeto2 python.jpg" alt="Projeto 2" class="projetos-imagem">
+                <div class="caixa-textos-projetos">
+                   <h3 class="Inf-projetos">Python</h3>
+                   <p class="paragrafo-projetos">Linguagens não morrem mas sim seus programadores.  Thales de Oliveira Gomes</p>
+                
+                </div>
+            </div>
+
+
+            <div class="projetos-PHP">
+                <img src="img/Projeto3 PhP.jpg" alt="Projeto 1" class="projetos-imagem">
+                <div class="caixa-textos-projetos">
+                  <h3 class="Inf-projetos">PHP</h3>
+                  <p class="paragrafo-projetos">Programadores e artistas são os únicos profissionais que tem como hobby a própria profissão.  Rafael Lain</p>
+          
+                </div>
+            <div>
+
+        </div>
+
+    </section>
+
+    <section id="contatos" class="contatos">
+        <h2 class="contatos-titulos">Entre em Contato</h2>
+       
+        <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+            <div class="grupo-form">
+                <input placeholder="Nome" class="campo-form" id="nome">
+            </div>
+           
+            <div class="grupo-form">
+                <textarea class="campo-form" placeholder="Digite sua Mensagem" rows="4" id="mensagem"></textarea>
+            </div>
+
+            <button type="submit" class="botao-form">Enviar WhatsApp</button>
+
+        </form>
+
+    </section>
+
+    <script>
+
+        function enviarWhats(event){
+        event.preventDefault()
+
+        const nome = document.getElementById('nome').value;
+        const mensagem = document.getElementById('mensagem').value;
+        const telefone = '5524993063397'
+
+        const texto = `Olá! Me chamo ${nome}, ${mensagem}`
+        const msgFormatada = encodeURIComponent (texto)
+
+        const url = `https://wa.me/${telefone}?text=${msgFormatada}`
+
+        window.open(url,'_blank')
+
+        }
+       
+
+    </script>
+</body>
+
+</html>
